@@ -54,11 +54,11 @@ namespace MyMediaRegulationApp
 
             overlayTimer = new System.Windows.Forms.Timer
             {
-                Interval = 2000 // Закриваємо оверлей через 1 секунду
+                Interval = 2000 // Закриваємо оверлей через 2 секунди
             };
             overlayTimer.Tick += (s, e) => this.Hide();
 
-            this.Hide(); // Ховаємо вікно при старті
+            this.Shown += (s, e) => PositionOverlay();
         }
 
         private void PositionOverlay()
@@ -69,6 +69,7 @@ namespace MyMediaRegulationApp
 
             this.Location = new Point(x, y);
         }
+
 
         private void InitializeTray()
         {

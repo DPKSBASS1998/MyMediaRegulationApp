@@ -8,10 +8,14 @@ namespace MyMediaRegulationApp
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            MainForm mainForm = new MainForm();
+            mainForm.Hide(); // Ховаємо перед запуском циклу повідомлень
+
+            Application.Run(); // Запускаємо додаток без головного вікна
+
         }
     }
 }
